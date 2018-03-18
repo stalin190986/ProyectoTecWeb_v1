@@ -1,5 +1,6 @@
 function initMap() 
 {
+		
 				var uluru = {lat: -2.1493982, lng: -79.9637138};
 				var map = new google.maps.Map(document.getElementById('map'), {
 				  zoom: 12,
@@ -22,7 +23,7 @@ function initMap()
 		
 function CambiarContenido()
 {
-	
+	//Videos mp4
 	var vid = document.getElementById("sourcevid");
 	vid.src = "../videos/pato.mp4";
 }	
