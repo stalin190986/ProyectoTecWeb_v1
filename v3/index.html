@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>HighTrack :: Reportes</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link href="css/estilo_login.css" rel="stylesheet" type="text/css" />
+	
+			<script type="text/javascript">
+
+			
+			
+			$(document).ready(function(){
+
+			   // jQuery methods go here...
+
+			});
+			
+			function Ingresar(){
+				var usuario = $("#usuario").val();
+				var contrasenia = $("#clave").val(); 
+				
+				if(usuario!="" & contrasenia!="")
+					location.href="Inicio.html";
+				else
+					alert("Ingrese usuario y contraseña");
+			}
+			
+			
+		
+		
+	</script>
+  
+  
+  </head>
+  
+  <body onload="">
+  		<header>
+			     <hgroup>	       
+			       <h1><br/><br/><br/></h1>
+			       <h2></h2>
+			           
+			     </hgroup>
+			     
+			     <form method="post" class="contact_form" action="servlet/SLogin" id="contact_form" onsubmit=""> 				     	
+					     	<input type="hidden" name="accion" value="login" required="true" />
+					     	<br/><br/><br/>
+					     	<br/><br/><br/><br/><br/><br/>	     	
+					     	<table border="0" width="100%" >
+					     		<tr>
+					     			<td width="50%"></td>
+					     			<td width="40%" >
+									     
+									     	<ul class="borde_login">					     				     		
+									     		
+									     		<li><label><strong>Usuario:</strong></label><input type="text" name="usuario" id="usuario" value="" placeholder="Usuario" required /> </li> 
+									     		<li><label><strong>Contrase&ntilde;a:</strong></label><input type="password" id="clave" name="clave" value="" placeholder="Clave" required /> </li>		
+									     		
+									     		<li>
+									     			<div align="center" id="progreso">		     
+						     		     				<button class="submit" type="button" onclick="Ingresar()">Ingresar</button>
+						     						</div>
+						      					</li>				     						     		
+									     	</ul> 
+									    	
+									 </td>
+								     <td width="10%"> </td>
+							    </tr>
+						     </table>				     
+				     <br/><br/>				     
+				 </form>				  
+			</header>
+						
+			<footer>
+				<br/><br/>
+		     	 	
+		    </footer>
+    
+    	
+	
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<!DOCTYPE html>
+<html>
+	<head>
+	   <title>Tecnologias Web</title>
+		<style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery-3.3.1.min.js"></script>
+		
+		<script src="js/efectos.js"></script>
+		<script src="js/librerias/Chart.bundle.js"></script>
+		<script src="js/librerias/utils.js"></script>
+		<script src="js/librerias/analyser.js"></script>
+		
+		<script>
+			  
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPMBhuvlJXlZlmcUu7E8gzVbSVsRTJpE&callback=initMap">
+		</script>
+		<!-- CANVAS -->
+			<script type="text/javascript">
+			
+			$(document).ready(function(){
+
+			   // jQuery methods go here...
+
+			});
+			
+			</script>
+		<!-- FIN CANVAS -->
+		<style>
+		video { 
+		  /*-webkit-transform: scaleX(2); 
+		  -moz-transform: scaleX(2);
+		  */
+		  object-fit: fill;
+		}
+</style>
+	<style>
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover:not(.active) {
+		background-color: #111;
+	}
+
+	.active {
+		background-color: #4CAF50;
+	}
+	</style>
+
+	</head>
+	
+	<body onload="init()" >
+		<div id="c_menu" style="clear:both; float:left; width:98%;">
+		<ul>
+			<li><a class="active" href="#home">Inicio</a></li>
+			<li><a href="#news">Noticias</a></li>
+			<li><a href="#contact">Contacto</a></li>
+			<li><a href="#about">Acerca</a></li>
+			<li style="float:right"><a href="javascript:location.href='Index.html'">Cerrar Sesión</a></li>
+			
+		</ul>
+		</div>
+		<div id="c_mapa" style="clear:both; float:left; width:47%; height:47%; margin:1%; border:1px solid green">
+			<h3>Google Maps</h3>
+			<div id="map"></div>
+			
+		</div>
+		
+		
+		<div id="c_video" style="float:left; width:47%; height:47%; margin:1%; border:1px solid green; overflow:auto">
+			<h3>Video</h3>
+			<div style="float:left; height:100%">
+				<!--https://www.youtube.com/watch?v=JhsrcaKbkOI-->
+				
+				<!--
+				<iframe frameborder="1" height="100%" width="100%" 
+					src="https://youtube.com/embed/Zq2IhadciVQ?autoplay=1&controls=0&showinfo=0&autohide=1">
+				</iframe>
+				-->
+				<video id="sourcevid" autoplay="true" loop="true" width="600" height="100%">
+					<source src="videos/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="videos/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+				</video>
+			</div>
+		</div>
+		
+		
+		<div id="c_grafico" style="clear:both; float:left; width:47%; height:47%; margin:1%; border:1px solid green;">
+		
+			<div class="content">
+				<div class="wrapper" style="max-width: 500px; margin: auto">
+					<canvas id="chart-0"></canvas>
+				</div>
+				<div class="toolbar">
+					<button onclick="togglePropagate(this)">Propagate</button>
+					<button onclick="toggleSmooth(this)">Smooth</button>
+					<button onclick="randomize(this)">Randomize</button>
+				</div>
+				<!--<div id="chart-analyser" class="analyser"></div>-->
+			</div>
+
+			<script>
+				
+			</script>
+		</div>
+		
+		<div id="c_canvas" style="float:left; width:47%; height:47%; margin:1%; border:1px solid green; overflow:auto">
+			<h3>Canvas</h3>
+			<div style="display:none">
+				<video id="sourcevid" autoplay="true" loop="true">
+					<source src="videos/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="videos/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+				</video>
+				<canvas id="sourcecopy" width="640" height="360"></canvas>
+			</div>
+	
+			<div style="z-index:1;position:relative;text-align:center;font-size:16px;font-weight:bold;width:600px;top:60px;"></div>
+				<canvas id="output" width="600" height="400" onmousedown="dropBomb(event, this)" style="border: solid 5px #666666"></canvas>
+				<!--<br/>Video de Cortesía
+				<a href="http://www.bigbuckbunny.org/">Big Buck Bunny</a></center>
+				-->
+			<div style="display:none">
+				<video id="sourcevid" autoplay="true" loop="true">
+					<source src="videos/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="videos/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+				</video>
+				<canvas id="sourcecopy" width="640" height="360"></canvas>
+			</div>
+		
+		
+			<script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script type="text/javascript">
+				try {
+				var pageTracker = _gat._getTracker("UA-15981974-1");
+				pageTracker._trackPageview();
+				} catch(err) {}</script>
+		</div>
+			
+			
+		<!--</div>-->
+	
+	
+	</body>
+</html>
